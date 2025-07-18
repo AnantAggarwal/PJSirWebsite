@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PJ sir</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#3b82f6',
+            dark: '#0f172a',
+            secondary: '#1e293b',
+            accent: '#f59e0b',
+            chatbg: '#0b1120',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          animation: {
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
+    }
+    
+    .gradient-text {
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    
+    .typing-indicator span {
+      height: 8px;
+      width: 8px;
+      background: #94a3b8;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 4px;
+      animation: bounce 1.5s infinite ease-in-out;
+    }
+    
+    .typing-indicator span:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+    
+    .typing-indicator span:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+    
+    @keyframes bounce {
+      0%, 60%, 100% { transform: translateY(0); }
+      30% { transform: translateY(-5px); }
+    }
+    
+    .chat-container {
+      scrollbar-width: thin;
+      scrollbar-color: #3b82f6 #1e293b;
+    }
+    
+    .chat-container::-webkit-scrollbar {
+      width: 6px;
+    }
+    
+    .chat-container::-webkit-scrollbar-track {
+      background: #1e293b;
+    }
+    
+    .chat-container::-webkit-scrollbar-thumb {
+      background-color: #3b82f6;
+      border-radius: 3px;
+    }
+    
+    .message-fade-in {
+      animation: fadeIn 0.3s ease-in-out;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="bg-dark text-gray-100">
+  <!-- Simplified Header -->
+  <header class="sticky top-0 z-40 bg-dark/90 backdrop-blur-md border-b border-secondary">
+    <div class="container mx-auto px-6 py-4 flex items-center justify-center">
+      <div class="flex items-center gap-4">
+        <div class="relative">
+          <div class="w-12 h-12 rounded-full border-2 border-primary bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center overflow-hidden">
+            <img src="pj_logo.png" alt="PJ sir Logo" class="w-full h-full object-cover rounded-full" />
+          </div>
+          <span class="absolute -bottom-1 -right-1 w-5 h-5 bg-green-500 rounded-full border-2 border-dark"></span>
+        </div>
+        <h1 class="text-2xl font-bold">
+          <span class="gradient-text">PJ sir</span>
+        </h1>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Chat Interface -->
+  <main class="container mx-auto px-4 py-6 max-w-6xl">
+    <div class="flex flex-col h-[calc(100vh-180px)] md:h-[calc(100vh-150px)] bg-chatbg rounded-xl shadow-xl overflow-hidden border border-gray-800">
+      <!-- Chat Header -->
+      <div class="bg-secondary px-6 py-4 border-b border-gray-800 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="relative">
+            <div class="w-10 h-10 rounded-full border-2 border-primary bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center overflow-hidden">
+              <img src="pj_logo.png" alt="PJ sir Logo" class="w-full h-full object-cover rounded-full" />
+            </div>
+            <span class="absolute -bottom-1 -right-1 w-3 h-3 bg-green-500 rounded-full border-2 border-secondary"></span>
+          </div>
+          <div>
+            <h2 class="font-bold">PJ sir</h2>
+            <p class="text-xs text-gray-400">Always ready to help</p>
+          </div>
+        </div>
+        <button class="text-gray-400 hover:text-primary transition-all" title="Clear conversation" id="clear-chat">
+          <i class="fas fa-trash-alt"></i>
+        </button>
+      </div>
+      
+      <!-- Chat Messages Container -->
+      <div id="chat-messages" class="flex-1 overflow-y-auto p-4 space-y-6 chat-container">
+        <!-- Welcome Message -->
+        <div class="message-fade-in">
+          <div class="flex items-start gap-3">
+            <div class="flex-shrink-0">
+              <div class="w-8 h-8 rounded-full border border-primary bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center overflow-hidden">
+                <img src="pj_logo.png" alt="PJ sir Logo" class="w-full h-full object-cover rounded-full" />
+              </div>
+            </div>
+            <div class="bg-secondary rounded-lg p-4 max-w-[85%] md:max-w-[70%]">
+              <h3 class="font-bold text-primary mb-1">PJ sir</h3>
+              <div class="prose prose-invert text-gray-300">
+                <p>Welcome! I'm <span class="font-semibold text-white">PJ Sir</span>'s AI assistant, here to support your mathematics journey.</p>
+                <p class="mt-2">Ask me anything about:</p>
+                <ul class="list-disc pl-5 mt-2">
+                  <li>Math concepts, from basics to Olympiad level</li>
+                  <li>Problem-solving strategies and step-by-step solutions</li>
+                  <li>Courses, books, and study resources</li>
+                  <li>Exam preparation tips and guidance</li>
+                </ul>
+                <p class="mt-2">How can I help you today?</p>
+              </div>
+              <div class="mt-3 flex flex-wrap gap-2">
+                <button class="bg-dark/50 hover:bg-dark text-xs px-3 py-1 rounded-full border border-gray-700 transition-all" onclick="insertSuggestion(this)">
+                  Tell me about PJ Sir's courses
+                </button>
+                <button class="bg-dark/50 hover:bg-dark text-xs px-3 py-1 rounded-full border border-gray-700 transition-all" onclick="insertSuggestion(this)">
+                  Recommend a math book
+                </button>
+                <button class="bg-dark/50 hover:bg-dark text-xs px-3 py-1 rounded-full border border-gray-700 transition-all" onclick="insertSuggestion(this)">
+                  How to improve problem-solving?
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Input Area -->
+      <div class="border-t border-gray-800 p-4 bg-secondary">
+        <form id="chat-form" class="flex items-end gap-3">
+          <div class="flex-1 relative">
+            <textarea 
+              id="message-input" 
+              rows="1" 
+              placeholder="Ask me any math question..." 
+              class="w-full bg-dark text-white rounded-lg px-4 py-3 pr-12 focus:outline-none focus:ring-2 focus:ring-primary resize-none max-h-32"
+              oninput="autoGrow(this)"></textarea>
+            <div class="absolute right-3 bottom-3 flex gap-2">
+              <button type="button" class="text-gray-400 hover:text-primary transition-all" title="Insert math symbols">
+                <i class="fas fa-superscript"></i>
+              </button>
+              <button type="button" class="text-gray-400 hover:text-primary transition-all" title="Upload image">
+                <i class="fas fa-image"></i>
+              </button>
+            </div>
+          </div>
+          <button 
+            type="submit" 
+            class="bg-primary hover:bg-blue-700 h-12 w-12 rounded-lg flex items-center justify-center transition-all disabled:opacity-50"
+            id="send-button">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </form>
+        <p class="text-xs text-gray-500 mt-2 text-center">
+          Responses are generated in real-time and not stored. For complex problems, verify with additional sources.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const chatForm = document.getElementById('chat-form');
+      const messageInput = document.getElementById('message-input');
+      const chatMessages = document.getElementById('chat-messages');
+      const sendButton = document.getElementById('send-button');
+      const clearChatBtn = document.getElementById('clear-chat');
+      
+      // Auto-grow textarea
+      function autoGrow(element) {
+        element.style.height = 'auto';
+        element.style.height = (element.scrollHeight) + 'px';
+      }
+      
+      // Insert suggestion into input
+      window.insertSuggestion = function(button) {
+        messageInput.value = button.textContent.trim();
+        messageInput.focus();
+        autoGrow(messageInput);
+      }
+      
+      // Scroll to bottom of chat
+      function scrollToBottom() {
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+      
+      // Add message to chat
+      function addMessage(content, isUser = false) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = 'message-fade-in';
+        
+        if (isUser) {
+          messageDiv.innerHTML = `
+            <div class="flex justify-end">
+              <div class="bg-primary/20 rounded-lg p-4 max-w-[85%] md:max-w-[70%] border border-primary/30">
+                <h3 class="font-bold text-right mb-1">You</h3>
+                <p>${content}</p>
+              </div>
+            </div>
+          `;
+        } else {
+          messageDiv.innerHTML = `
+            <div class="flex items-start gap-3">
+              <div class="flex-shrink-0">
+                <div class="w-8 h-8 rounded-full border border-primary bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center overflow-hidden">
+                  <img src="pj_logo.png" alt="PJ sir Logo" class="w-full h-full object-cover rounded-full" />
+                </div>
+              </div>
+              <div class="bg-secondary rounded-lg p-4 max-w-[85%] md:max-w-[70%]">
+                <h3 class="font-bold text-primary mb-1">PJ sir</h3>
+                <div class="prose prose-invert text-gray-300">
+                  ${content}
+                </div>
+              </div>
+            </div>
+          `;
+        }
+        
+        chatMessages.appendChild(messageDiv);
+        scrollToBottom();
+      }
+      
+      // Show typing indicator
+      function showTypingIndicator() {
+        const typingDiv = document.createElement('div');
+        typingDiv.className = 'flex items-start gap-3';
+        typingDiv.innerHTML = `
+          <div class="flex-shrink-0">
+            <div class="w-8 h-8 rounded-full border border-primary bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center overflow-hidden">
+              <img src="pj_logo.png" alt="PJ sir Logo" class="w-full h-full object-cover rounded-full" />
+            </div>
+          </div>
+          <div class="bg-secondary rounded-lg p-4 max-w-[85%] md:max-w-[70%]">
+            <div class="typing-indicator">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        `;
+        
+        chatMessages.appendChild(typingDiv);
+        scrollToBottom();
+        return typingDiv;
+      }
+      
+      // Remove typing indicator
+      function removeTypingIndicator(indicator) {
+        if (indicator && indicator.parentNode) {
+          indicator.parentNode.removeChild(indicator);
+        }
+      }
+      
+      // Generate AI response (simulated)
+      function generateResponse(userMessage) {
+        const responses = {
+          "hello": "Hello! How can I assist you with math today?",
+          "hi": "Hi there! What math concept would you like to explore?",
+          "help": "I can help with: Calculus, Algebra, Geometry, Trigonometry, and problem-solving strategies. What do you need?",
+          "thanks": "You're welcome! Let me know if you have any other questions.",
+          "thank you": "Happy to help! Remember, practice is key to mastering mathematics.",
+          "explain quadratic equations": "Quadratic equations are second-degree polynomial equations in the form ax² + bx + c = 0. They have:<br><br>1. Two solutions (roots)<br>2. Can be solved by factoring, completing the square, or using the quadratic formula<br>3. Graph as parabolas<br><br>Would you like an example problem?",
+          "solve ∫x² dx": "To solve ∫x² dx:<br><br>1. Apply the power rule for integration: ∫xⁿ dx = xⁿ⁺¹/(n+1) + C<br>2. For n=2: ∫x² dx = x³/3 + C<br><br>Where C is the constant of integration.",
+          "help with geometry proof": "For geometry proofs, I recommend:<br><br>1. Drawing a clear diagram<br>2. Listing all given information<br>3. Identifying relevant theorems<br>4. Working step-by-step<br><br>Would you like help with a specific proof?",
+          "explain the concept of limits in calculus": "In calculus, a <strong>limit</strong> describes the value that a function approaches as the input approaches some value. This is fundamental to understanding derivatives and integrals.<br><br>Would you like:<br>1. A visual example?<br>2. The formal (ε-δ) definition?<br>3. A practice problem?",
+          "what is the pythagorean theorem": "The Pythagorean theorem states that in a right triangle:<br><br>a² + b² = c²<br><br>Where:<br>- a and b are the legs<br>- c is the hypotenuse<br><br>Would you like to see a proof or example application?",
+          "how to solve linear equations": "To solve linear equations (ax + b = c):<br><br>1. Isolate the variable term<br>2. Perform inverse operations<br>3. Simplify both sides<br>4. Check your solution<br><br>Would you like me to walk through an example?"
+        };
+        
+        const lowerMessage = userMessage.toLowerCase();
+        let response = responses[lowerMessage] || 
+          `I'd be happy to help with "${userMessage}". Here's what I can tell you:<br><br>
+          In mathematics, this concept relates to many areas of study. 
+          Let's break it down step by step:<br><br>
+          Would you like:<br>
+          1. A detailed explanation?<br>
+          2. Example problems?<br>
+          3. Related concepts to explore?`;
+          
+        return response;
+      }
+      
+      // Handle form submission
+      chatForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const message = messageInput.value.trim();
+        
+        if (message) {
+          // Add user message
+          addMessage(message, true);
+          messageInput.value = '';
+          autoGrow(messageInput);
+          
+          // Show typing indicator
+          const typingIndicator = showTypingIndicator();
+          
+          // Simulate AI thinking time
+          setTimeout(() => {
+            removeTypingIndicator(typingIndicator);
+            
+            // Generate and add AI response
+            const response = generateResponse(message);
+            addMessage(response);
+          }, 1000 + Math.random() * 1500);
+        }
+      });
+      
+      // Clear chat history
+      clearChatBtn.addEventListener('click', function() {
+        if (confirm('Clear the entire conversation?')) {
+          chatMessages.innerHTML = `
+            <div class="message-fade-in">
+              <div class="flex items-start gap-3">
+                <div class="flex-shrink-0">
+                  <div class="w-8 h-8 rounded-full border border-primary bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center overflow-hidden">
+                    <img src="pj_logo.png" alt="PJ sir Logo" class="w-full h-full object-cover rounded-full" />
+                  </div>
+                </div>
+                <div class="bg-secondary rounded-lg p-4 max-w-[85%] md:max-w-[70%]">
+                  <h3 class="font-bold text-primary mb-1">PJ sir</h3>
+                  <div class="prose prose-invert text-gray-300">
+                    <p>Conversation cleared. What would you like to discuss now?</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+        }
+      });
+      
+      // Initial scroll to bottom
+      scrollToBottom();
+      
+      // Focus input on page load
+      messageInput.focus();
+    });
+  </script>
+</body>
+</html>

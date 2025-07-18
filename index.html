@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PJ Sir | Mathematics Mentor</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- SwiperJS CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#3b82f6',
+            dark: '#0f172a',
+            secondary: '#1e293b',
+            accent: '#f59e0b',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
+    }
+    
+    .gradient-text {
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    
+    .hero-gradient {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    }
+    
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+    
+    .nav-link {
+      position: relative;
+    }
+    
+    .nav-link:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background-color: #3b82f6;
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover:after {
+      width: 100%;
+    }
+    
+    .book-card {
+      perspective: 1000px;
+    }
+    
+    .book-inner {
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+    
+    .book-card:hover .book-inner {
+      transform: rotateY(10deg);
+    }
+  </style>
+</head>
+<body class="bg-dark text-gray-100">
+  <!-- Floating Contact Button -->
+  <div class="fixed right-6 bottom-6 z-50">
+    <a href="#contact" class="bg-primary hover:bg-blue-700 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110">
+      <i class="fas fa-envelope text-xl"></i>
+    </a>
+  </div>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 bg-dark/90 backdrop-blur-md border-b border-secondary">
+    <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-4">
+        <div class="relative">
+          <img src="pj_logo.png" alt="PJ Sir" class="w-12 h-12 rounded-full border-2 border-primary" />
+          <span class="absolute -bottom-1 -right-1 w-5 h-5 bg-green-500 rounded-full border-2 border-dark"></span>
+        </div>
+        <h1 class="text-2xl font-bold">
+          <span class="gradient-text">PJ Sir</span>
+        </h1>
+      </div>
+      <nav class="hidden md:flex items-center space-x-8">
+        <a href="#home" class="nav-link text-gray-300 hover:text-white">Home</a>
+        <a href="#about" class="nav-link text-gray-300 hover:text-white">About</a>
+        <a href="#courses" class="nav-link text-gray-300 hover:text-white">Courses</a>
+        <a href="#books" class="nav-link text-gray-300 hover:text-white">Books</a>
+        <a href="#forum" class="nav-link text-gray-300 hover:text-white">Forum</a>
+        <a href="#success" class="nav-link text-gray-300 hover:text-white">Success</a>
+        <a href="pjbot.html" class="nav-link text-gray-300 hover:text-white">PJ Bot</a>
+        <button class="bg-primary hover:bg-blue-700 px-4 py-2 rounded-md font-medium transition-all">
+          Contact
+        </button>
+      </nav>
+      <button class="md:hidden text-2xl">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="hero-gradient relative overflow-hidden">
+    <div class="absolute inset-0 opacity-20">
+      <div class="absolute top-0 left-0 w-full h-full bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-30"></div>
+    </div>
+    <div class="container mx-auto px-6 py-32 relative z-10 text-center">
+      <div class="flex flex-col md:flex-row items-center justify-center gap-10">
+        <div class="md:w-2/3 text-center">
+          <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+            <span class="gradient-text">Simple Formulation</span><br>
+            <span class="text-white">Amazing Manipulation</span>
+          </h1>
+          <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-10">
+            Master mathematics with India's most celebrated educator. Courses, books, and mentorship for JEE, Olympiads, and beyond.
+          </p>
+          <div class="flex gap-4 justify-center">
+            <a href="#courses" class="bg-primary hover:bg-blue-700 px-8 py-3 rounded-md font-medium transition-all">
+              Explore Courses
+            </a>
+            <a href="#books" class="bg-secondary hover:bg-gray-700 px-8 py-3 rounded-md font-medium transition-all border border-gray-700">
+              View Books
+            </a>
+          </div>
+        </div>
+        <div class="md:w-1/3 flex justify-center mt-10 md:mt-0">
+          <img src="D21A7825-939D-4568-AB46-B4ABB52938C9_.webp" alt="PJ Sir with folded hands" class="rounded-xl shadow-2xl w-64 h-auto object-cover" />
+        </div>
+      </div>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-dark to-transparent"></div>
+  </section>
+
+  <!-- About PJ Sir -->
+  <section id="about" class="py-20 bg-dark">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col lg:flex-row gap-12 items-center">
+        <div class="lg:w-1/2">
+          <div class="relative">
+            <img src="https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                 alt="PJ Sir Teaching" 
+                 class="rounded-xl shadow-2xl w-full h-auto" />
+            <div class="absolute -bottom-6 -right-6 bg-primary p-4 rounded-xl shadow-lg">
+              <div class="text-center">
+                <p class="text-3xl font-bold text-white">18+</p>
+                <p class="text-white text-sm">Published Books</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lg:w-1/2">
+          <h2 class="text-3xl font-bold mb-6">
+            <span class="gradient-text">About PJ Sir</span>
+          </h2>
+          <div class="space-y-4 text-gray-300">
+            <p>
+              <span class="font-semibold text-white">Prashant Jain</span>, popularly known as PJ Sir, is one of India's most celebrated Mathematics educators. An alumnus of <span class="text-accent font-medium">IIT Bombay</span>, he secured <span class="text-accent font-medium">All India Rank 42 in IIT JEE</span>, is an <span class="text-accent font-medium">INChO Gold Medalist</span>, and a <span class="text-accent font-medium">qualified INPhO</span> scholar.
+            </p>
+            <p>
+              He is currently the <span class="text-accent font-medium">National Outcomes Head</span> at Unacademy and has been mentoring JEE aspirants for over a decade. With prior experience at renowned institutions like Resonance and Nucleus in Kota, PJ Sir has authored 18 books, including the highly acclaimed <span class="italic text-white">IOQM Mathematics</span> series published by Pearson.
+            </p>
+            <p>
+              A passionate mentor, speaker, and content creator, PJ Sir is committed to guiding students through their competitive exam journey with clarity and confidence.
+            </p>
+          </div>
+          <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="bg-secondary p-3 rounded-lg text-center">
+              <div class="text-primary text-2xl mb-1">
+                <i class="fas fa-medal"></i>
+              </div>
+              <p class="text-sm font-medium">Gold Medalist</p>
+            </div>
+            <div class="bg-secondary p-3 rounded-lg text-center">
+              <div class="text-primary text-2xl mb-1">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+              <p class="text-sm font-medium">IIT Bombay</p>
+            </div>
+            <div class="bg-secondary p-3 rounded-lg text-center">
+              <div class="text-primary text-2xl mb-1">
+                <i class="fas fa-book"></i>
+              </div>
+              <p class="text-sm font-medium">18 Books</p>
+            </div>
+            <div class="bg-secondary p-3 rounded-lg text-center">
+              <div class="text-primary text-2xl mb-1">
+                <i class="fas fa-users"></i>
+              </div>
+              <p class="text-sm font-medium">10K+ Students</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Courses Section -->
+  <section id="courses" class="py-20 bg-secondary">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold mb-4">
+          <span class="gradient-text">Featured Courses</span>
+        </h2>
+        <p class="text-gray-400 max-w-2xl mx-auto">
+          Comprehensive programs designed to transform your JEE preparation journey with structured learning and expert guidance.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-8">
+      </div>
+      
+      <div class="mt-12 text-center">
+        <div id="courses-slider" class="mt-8"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Books Section -->
+  <section id="books" class="py-20 bg-dark">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold mb-4">
+          <span class="gradient-text">Published Books</span>
+        </h2>
+        <p class="text-gray-400 max-w-2xl mx-auto">
+          Authored by PJ Sir to help students master mathematics concepts for competitive exams and Olympiads.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <!-- Book 1 -->
+        <div class="book-card">
+          <div class="book-inner bg-secondary rounded-lg overflow-hidden shadow-lg h-full flex flex-col">
+            <div class="p-4 flex-grow">
+              <div class="aspect-[3/4] bg-gray-700 rounded-md mb-4 flex items-center justify-center">
+                <img src="https://m.media-amazon.com/images/I/71aFt4+OTOL._AC_UF1000,1000_QL80_.jpg" 
+                     alt="IOQM Book" 
+                     class="w-full h-full object-contain" />
+              </div>
+              <h3 class="font-bold text-lg mb-1">IOQM Mathematics</h3>
+              <p class="text-gray-400 text-sm mb-3">Indian Olympiad Qualifiers</p>
+              <div class="flex items-center text-yellow-400 mb-3">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span class="text-gray-400 text-xs ml-1">(128)</span>
+              </div>
+            </div>
+            <div class="p-4 border-t border-gray-700">
+              <a href="https://www.amazon.in/IOQM-Mathematics-Indian-Olympiad-Qualifiers/dp/9361597531" 
+                 class="w-full bg-primary hover:bg-blue-700 text-white py-2 rounded text-sm font-medium flex items-center justify-center transition-all"
+                 target="_blank">
+                <i class="fab fa-amazon mr-2"></i> Buy Now
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Book 2 -->
+        <div class="book-card">
+          <div class="book-inner bg-secondary rounded-lg overflow-hidden shadow-lg h-full flex flex-col">
+            <div class="p-4 flex-grow">
+              <div class="aspect-[3/4] bg-gray-700 rounded-md mb-4 flex items-center justify-center">
+                <img src="https://m.media-amazon.com/images/I/81D+xF5X2TL._SY466_.jpg" 
+                     alt="NVision 6" 
+                     class="w-full h-full object-contain" />
+              </div>
+              <h3 class="font-bold text-lg mb-1">NVision Math Class 6</h3>
+              <p class="text-gray-400 text-sm mb-3">Comprehensive Guide</p>
+              <div class="flex items-center text-yellow-400 mb-3">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <span class="text-gray-400 text-xs ml-1">(96)</span>
+              </div>
+            </div>
+            <div class="p-4 border-t border-gray-700">
+              <a href="https://www.amazon.in/dp/935606914X" 
+                 class="w-full bg-primary hover:bg-blue-700 text-white py-2 rounded text-sm font-medium flex items-center justify-center transition-all"
+                 target="_blank">
+                <i class="fab fa-amazon mr-2"></i> Buy Now
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Book 3 -->
+        <div class="book-card">
+          <div class="book-inner bg-secondary rounded-lg overflow-hidden shadow-lg h-full flex flex-col">
+            <div class="p-4 flex-grow">
+              <div class="aspect-[3/4] bg-gray-700 rounded-md mb-4 flex items-center justify-center">
+                <img src="https://m.media-amazon.com/images/I/81RxViRMqKL._SY466_.jpg" 
+                     alt="NVision 7" 
+                     class="w-full h-full object-contain" />
+              </div>
+              <h3 class="font-bold text-lg mb-1">NVision Math Class 7</h3>
+              <p class="text-gray-400 text-sm mb-3">Comprehensive Guide</p>
+              <div class="flex items-center text-yellow-400 mb-3">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span class="text-gray-400 text-xs ml-1">(112)</span>
+              </div>
+            </div>
+            <div class="p-4 border-t border-gray-700">
+              <a href="https://www.amazon.in/dp/9356069158" 
+                 class="w-full bg-primary hover:bg-blue-700 text-white py-2 rounded text-sm font-medium flex items-center justify-center transition-all"
+                 target="_blank">
+                <i class="fab fa-amazon mr-2"></i> Buy Now
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Book 4 -->
+        <div class="book-card">
+          <div class="book-inner bg-secondary rounded-lg overflow-hidden shadow-lg h-full flex flex-col">
+            <div class="p-4 flex-grow">
+              <div class="aspect-[3/4] bg-gray-700 rounded-md mb-4 flex items-center justify-center">
+                <img src="https://m.media-amazon.com/images/I/71aFt4+OTOL._AC_UF1000,1000_QL80_.jpg" 
+                     alt="Advanced Math" 
+                     class="w-full h-full object-contain" />
+              </div>
+              <h3 class="font-bold text-lg mb-1">Advanced Mathematics</h3>
+              <p class="text-gray-400 text-sm mb-3">JEE & Olympiad Prep</p>
+              <div class="flex items-center text-yellow-400 mb-3">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span class="text-gray-400 text-xs ml-1">(245)</span>
+              </div>
+            </div>
+            <div class="p-4 border-t border-gray-700">
+              <a href="https://www.amazon.in/stores/page/C167513A-81C4-4842-805F-00C0F0B7174F" 
+                 class="w-full bg-primary hover:bg-blue-700 text-white py-2 rounded text-sm font-medium flex items-center justify-center transition-all"
+                 target="_blank">
+                <i class="fab fa-amazon mr-2"></i> View All
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Discussion Forum -->
+  <section id="forum" class="py-20 bg-secondary">
+    <div class="container mx-auto px-6">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold mb-4">
+            <span class="gradient-text">Discussion Forum</span>
+          </h2>
+          <p class="text-gray-400">
+            Join our vibrant community of learners. Ask questions, share solutions, and collaborate with peers.
+          </p>
+        </div>
+        
+        <div class="bg-dark rounded-xl shadow-lg overflow-hidden">
+          <div class="p-6 border-b border-gray-700">
+            <h3 class="text-xl font-bold mb-4">Recent Discussions</h3>
+            <div class="space-y-4">
+              <!-- Discussion 1 -->
+              <div class="flex gap-4">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" class="w-10 h-10 rounded-full" />
+                <div class="flex-grow">
+                  <div class="flex items-center justify-between mb-1">
+                    <span class="font-medium">Rahul Sharma</span>
+                    <span class="text-gray-500 text-sm">2 hours ago</span>
+                  </div>
+                  <p class="text-gray-300 mb-2">How to solve this quadratic equation problem from IOQM 2023?</p>
+                  <div class="flex items-center text-sm text-gray-500">
+                    <span class="flex items-center mr-4">
+                      <i class="far fa-comment mr-1"></i> 5 replies
+                    </span>
+                    <span class="flex items-center">
+                      <i class="far fa-eye mr-1"></i> 42 views
+                    </span>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Discussion 2 -->
+              <div class="flex gap-4">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User" class="w-10 h-10 rounded-full" />
+                <div class="flex-grow">
+                  <div class="flex items-center justify-between mb-1">
+                    <span class="font-medium">Priya Patel</span>
+                    <span class="text-gray-500 text-sm">5 hours ago</span>
+                  </div>
+                  <p class="text-gray-300 mb-2">Best approach for geometry problems in JEE Advanced?</p>
+                  <div class="flex items-center text-sm text-gray-500">
+                    <span class="flex items-center mr-4">
+                      <i class="far fa-comment mr-1"></i> 8 replies
+                    </span>
+                    <span class="flex items-center">
+                      <i class="far fa-eye mr-1"></i> 67 views
+                    </span>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Discussion 3 -->
+              <div class="flex gap-4">
+                <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="User" class="w-10 h-10 rounded-full" />
+                <div class="flex-grow">
+                  <div class="flex items-center justify-between mb-1">
+                    <span class="font-medium">Amit Kumar</span>
+                    <span class="text-gray-500 text-sm">1 day ago</span>
+                  </div>
+                  <p class="text-gray-300 mb-2">Can someone explain the concept behind problem 12 in PJ Sir's book?</p>
+                  <div class="flex items-center text-sm text-gray-500">
+                    <span class="flex items-center mr-4">
+                      <i class="far fa-comment mr-1"></i> 3 replies
+                    </span>
+                    <span class="flex items-center">
+                      <i class="far fa-eye mr-1"></i> 38 views
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="p-6">
+            <h4 class="text-lg font-medium mb-4">Start a new discussion</h4>
+            <form class="space-y-4">
+              <input type="text" placeholder="Title" class="w-full px-4 py-2 bg-gray-700 text-white rounded border border-gray-600 focus:border-primary focus:outline-none" />
+              <textarea placeholder="Your question or topic..." rows="3" class="w-full px-4 py-2 bg-gray-700 text-white rounded border border-gray-600 focus:border-primary focus:outline-none"></textarea>
+              <button type="submit" class="bg-primary hover:bg-blue-700 px-6 py-2 rounded font-medium transition-all">
+                Post Discussion
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Success Stories -->
+  <section id="success" class="py-20 bg-dark">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold mb-4">
+          <span class="gradient-text">Success Stories</span>
+        </h2>
+        <p class="text-gray-400 max-w-2xl mx-auto">
+          Hear from students who transformed their academic journey with PJ Sir's guidance.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Testimonial 1 -->
+        <div class="bg-secondary rounded-xl p-6 shadow-lg card-hover">
+          <div class="flex items-center mb-4">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Student" class="w-12 h-12 rounded-full mr-4" />
+            <div>
+              <h4 class="font-bold">Rahul Sharma</h4>
+              <p class="text-gray-400 text-sm">AIR 12, JEE Advanced 2023</p>
+            </div>
+          </div>
+          <div class="text-gray-300 mb-4">
+            <i class="fas fa-quote-left text-primary mr-2"></i>
+            PJ Sir's teaching methodology is exceptional. His problem-solving techniques helped me secure AIR 12 in JEE Advanced. The way he breaks down complex problems into simple steps is remarkable.
+          </div>
+        </div>
+        
+        <!-- Testimonial 2 -->
+        <div class="bg-secondary rounded-xl p-6 shadow-lg card-hover">
+          <div class="flex items-center mb-4">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Student" class="w-12 h-12 rounded-full mr-4" />
+            <div>
+              <h4 class="font-bold">Priya Patel</h4>
+              <p class="text-gray-400 text-sm">INMO Qualifier 2023</p>
+            </div>
+          </div>
+          <div class="text-gray-300 mb-4">
+            <i class="fas fa-quote-left text-primary mr-2"></i>
+            PJ Sir's Olympiad books were my bible during preparation. His explanations are crystal clear, and the problems are perfectly curated. Qualified for INMO in my first attempt thanks to his guidance.
+          </div>
+        </div>
+        
+        <!-- Testimonial 3 -->
+        <div class="bg-secondary rounded-xl p-6 shadow-lg card-hover">
+          <div class="flex items-center mb-4">
+            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Student" class="w-12 h-12 rounded-full mr-4" />
+            <div>
+              <h4 class="font-bold">Amit Kumar</h4>
+              <p class="text-gray-400 text-sm">AIR 89, JEE Advanced 2022</p>
+            </div>
+          </div>
+          <div class="text-gray-300 mb-4">
+            <i class="fas fa-quote-left text-primary mr-2"></i>
+            The Nimbus batch completely changed my approach to mathematics. PJ Sir's emphasis on conceptual clarity over rote learning helped me develop genuine problem-solving skills that were crucial for JEE.
+          </div>
+        </div>
+      </div>
+      
+      <div class="mt-12 aspect-w-16 aspect-h-9 rounded-xl overflow-hidden shadow-2xl max-w-4xl mx-auto">
+        <iframe class="w-full h-96" src="https://www.youtube.com/embed/Z1WiCf_Xk7M" title="Success Story Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-secondary">
+    <div class="container mx-auto px-6">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold mb-4">
+            <span class="gradient-text">Contact PJ Sir</span>
+          </h2>
+          <p class="text-gray-400">
+            Have questions or need guidance? Reach out to us directly.
+          </p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-12">
+          <div>
+            <h3 class="text-xl font-bold mb-6">Get in Touch</h3>
+            <div class="space-y-6">
+              <div class="flex items-start gap-4">
+                <div class="bg-primary/10 text-primary p-3 rounded-full">
+                  <i class="fas fa-envelope text-lg"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium mb-1">Email</h4>
+                  <p class="text-gray-400">contact@pjsir.com</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start gap-4">
+                <div class="bg-primary/10 text-primary p-3 rounded-full">
+                  <i class="fas fa-phone-alt text-lg"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium mb-1">Phone</h4>
+                  <p class="text-gray-400">+91 98765 43210</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start gap-4">
+                <div class="bg-primary/10 text-primary p-3 rounded-full">
+                  <i class="fas fa-map-marker-alt text-lg"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium mb-1">Location</h4>
+                  <p class="text-gray-400">Bengaluru, India</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="mt-8">
+              <h4 class="font-medium mb-4">Follow PJ Sir</h4>
+              <div class="flex gap-4">
+                <a href="#" class="bg-dark hover:bg-gray-800 w-10 h-10 rounded-full flex items-center justify-center transition-all">
+                  <i class="fab fa-youtube"></i>
+                </a>
+                <a href="#" class="bg-dark hover:bg-gray-800 w-10 h-10 rounded-full flex items-center justify-center transition-all">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="bg-dark hover:bg-gray-800 w-10 h-10 rounded-full flex items-center justify-center transition-all">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" class="bg-dark hover:bg-gray-800 w-10 h-10 rounded-full flex items-center justify-center transition-all">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div>
+            <form action="https://formspree.io/f/xkgzndrn" method="POST" class="space-y-4">
+              <div>
+                <label for="name" class="block text-sm font-medium mb-1">Your Name</label>
+                <input type="text" id="name" name="name" required 
+                       class="w-full px-4 py-2 bg-dark text-white rounded border border-gray-600 focus:border-primary focus:outline-none" />
+              </div>
+              
+              <div>
+                <label for="email" class="block text-sm font-medium mb-1">Email Address</label>
+                <input type="email" id="email" name="email" required 
+                       class="w-full px-4 py-2 bg-dark text-white rounded border border-gray-600 focus:border-primary focus:outline-none" />
+              </div>
+              
+              <div>
+                <label for="phone" class="block text-sm font-medium mb-1">Phone Number</label>
+                <input type="tel" id="phone" name="phone" 
+                       class="w-full px-4 py-2 bg-dark text-white rounded border border-gray-600 focus:border-primary focus:outline-none" />
+              </div>
+              
+              <div>
+                <label for="message" class="block text-sm font-medium mb-1">Your Message</label>
+                <textarea id="message" name="message" rows="4" required 
+                          class="w-full px-4 py-2 bg-dark text-white rounded border border-gray-600 focus:border-primary focus:outline-none"></textarea>
+              </div>
+              
+              <button type="submit" 
+                      class="w-full bg-primary hover:bg-blue-700 px-6 py-3 rounded font-medium transition-all">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark py-12 border-t border-gray-800">
+    <div class="container mx-auto px-6">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <img src="pj_logo.png" alt="PJ Sir" class="w-10 h-10 rounded-full" />
+            <h3 class="text-xl font-bold">
+              <span class="gradient-text">PJ Sir</span>
+            </h3>
+          </div>
+          <p class="text-gray-400">
+            Transforming mathematics education with simple formulations and amazing manipulations.
+          </p>
+        </div>
+        
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="#home" class="text-gray-400 hover:text-primary transition-all">Home</a></li>
+            <li><a href="#courses" class="text-gray-400 hover:text-primary transition-all">Courses</a></li>
+            <li><a href="#books" class="text-gray-400 hover:text-primary transition-all">Books</a></li>
+            <li><a href="#forum" class="text-gray-400 hover:text-primary transition-all">Discussion Forum</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Resources</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-primary transition-all">Study Materials</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-primary transition-all">Practice Problems</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-primary transition-all">Mock Tests</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-primary transition-all">Video Lectures</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Newsletter</h4>
+          <p class="text-gray-400 mb-4">
+            Subscribe to get updates on new courses, books, and study tips.
+          </p>
+          <form class="flex">
+            <input type="email" placeholder="Your email" 
+                   class="px-4 py-2 bg-gray-800 text-white rounded-l focus:outline-none w-full" />
+            <button type="submit" 
+                    class="bg-primary hover:bg-blue-700 px-4 py-2 rounded-r transition-all">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-500 text-sm">
+          © 2025 PJ Sir. All rights reserved.
+        </p>
+        <div class="flex gap-4 mt-4 md:mt-0">
+          <a href="#" class="text-gray-500 hover:text-primary transition-all">
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a href="#" class="text-gray-500 hover:text-primary transition-all">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" class="text-gray-500 hover:text-primary transition-all">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="#" class="text-gray-500 hover:text-primary transition-all">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Simple script for mobile menu toggle (would be enhanced in production)
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenuButton = document.querySelector('.md\\:hidden');
+      const navLinks = document.querySelector('nav');
+      
+      mobileMenuButton.addEventListener('click', function() {
+        navLinks.classList.toggle('hidden');
+      });
+      
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+
+      // --- Courses Slider ---
+      // Placeholder function: user will implement this to return an array of course objects
+      function getCourses() {
+        // Example structure:
+        return [
+          {
+            name: 'Phoenix Batch for 2026',
+            startDate: '2025-04-22',
+            timing: 'Morning classes',
+            description: 'A comprehensive IIT JEE 2026 Droppers batch offering expert-led live classes, full syllabus coverage, instant doubt resolution, and strategic guidance in Hinglish with English notes.',
+            image: 'https://static.uacdn.net/thumbnail/batch/52a28a06fa5244529fdaa42597b1d7cf.png?q=75&w=640&auto=format%2Ccompress',
+            link: 'https://unacademy.com/batch/phoenix-batch-for-2026-by-warriors/RW7I1YOJ'
+          },
+          {
+            name: 'Nimbus Batch for IIT JEE 2027',
+            startDate: '2025-04-01',
+            timing: 'Evening classes',
+            description: 'A comprehensive IIT JEE 2027 Class 11 batch offering expert-led evening classes, full syllabus coverage, instant doubt resolution, and strategic guidance in Hinglish with English notes.',
+            image: 'https://static.uacdn.net/thumbnail/batch/8816f3c4328f49edb3e7b4567109356b.png?q=75&w=640&auto=format%2Ccompress',
+            link: 'https://unacademy.com/batch/nimbus-batch-for-iit-jee-2027/1TN55CFS'
+          },
+          {
+            name: 'Nimbus IIT JEE',
+            startDate: '2025-03-18',
+            timing: 'Evening classes',
+            description: 'A comprehensive IIT JEE 2027 Class 11 batch offering expert-led evening classes, full syllabus coverage, instant doubt resolution, and strategic guidance in Hinglish with English notes.',
+            image: 'https://static.uacdn.net/thumbnail/batch/ef8f9c3e4c924291b7dc64cff0b76beb.png?q=75&w=640&auto=format%2Ccompress',
+            link: 'https://unacademy.com/batch/nimbus-iit-jee/3MHICF6H'
+          },
+          {
+            name: 'Early Nexus Batch for JEE 2026',
+            startDate: '2024-01-09',
+            timing: 'Evening classes',
+            description: 'A comprehensive IIT JEE 2026 Early Class 12 batch offering expert-led evening classes, full syllabus coverage, instant doubt resolution, and strategic guidance in Hinglish with English notes.',
+            image: 'https://static.uacdn.net/thumbnail/batch/c420b78a909a4a69b6ec9e5da939961a.png?q=75&w=640&auto=format%2Ccompress',
+            link: 'https://unacademy.com/batch/early-nexus-batch-for-jee-main-and-advanced-2026-207/9JK9AJRK'
+          }
+        ];
+      }
+
+      // --- Books Slider ---
+      function getBooks() {
+        // Example structure:
+        return [
+          {
+            title: 'IOQM Mathematics',
+            subtitle: 'Indian Olympiad Qualifiers',
+            image: 'https://m.media-amazon.com/images/I/71aFt4+OTOL._AC_UF1000,1000_QL80_.jpg',
+            rating: 4.5,
+            reviews: 128,
+            link: 'https://www.amazon.in/IOQM-Mathematics-Indian-Olympiad-Qualifiers/dp/9361597531',
+            button: 'Buy Now',
+            buttonIcon: 'fab fa-amazon'
+          },
+          // Add more books here
+        ];
+      }
+
+      function renderBooksSlider() {
+        const books = getBooks();
+        const sliderContainer = document.getElementById('books-slider');
+        if (!books.length) {
+          sliderContainer.innerHTML = '<p class="text-gray-400">No books available.</p>';
+          return;
+        }
+        sliderContainer.innerHTML = `
+          <div class="swiper books-swiper">
+            <div class="swiper-wrapper">
+              ${books.map(book => `
+                <div class="swiper-slide">
+                  <div class="book-card">
+                    <div class="book-inner bg-secondary rounded-lg overflow-hidden shadow-lg h-full flex flex-col">
+                      <div class="p-4 flex-grow">
+                        <div class="aspect-[3/4] bg-gray-700 rounded-md mb-4 flex items-center justify-center">
+                          <img src="${book.image}" alt="${book.title}" class="w-full h-full object-contain" />
+                        </div>
+                        <h3 class="font-bold text-lg mb-1">${book.title}</h3>
+                        <p class="text-gray-400 text-sm mb-3">${book.subtitle || ''}</p>
+                        <div class="flex items-center text-yellow-400 mb-3">
+                          <!-- Optionally add stars here if you want -->
+                          <span class="text-gray-400 text-xs ml-1">(${book.reviews})</span>
+                        </div>
+                      </div>
+                      <div class="p-4 border-t border-gray-700">
+                        <a href="${book.link}" class="w-full bg-primary hover:bg-blue-700 text-white py-2 rounded text-sm font-medium flex items-center justify-center transition-all" target="_blank">
+                          <i class="${book.buttonIcon} mr-2"></i> ${book.button}
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        `;
+        if (window.Swiper) {
+          new Swiper('.books-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 24,
+            loop: true,
+            navigation: {
+              nextEl: '.books-swiper .swiper-button-next',
+              prevEl: '.books-swiper .swiper-button-prev',
+            },
+            pagination: {
+              el: '.books-swiper .swiper-pagination',
+              clickable: true,
+            },
+            breakpoints: {
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            },
+          });
+        }
+      }
+
+      // --- Testimonials Slider ---
+      function getTestimonials() {
+        // Example structure:
+        return [
+          {
+            name: 'Rahul Sharma',
+            image: 'https://randomuser.me/api/portraits/men/32.jpg',
+            tag: 'AIR 12, JEE Advanced 2023',
+            text: `PJ Sir's teaching methodology is exceptional. His problem-solving techniques helped me secure AIR 12 in JEE Advanced. The way he breaks down complex problems into simple steps is remarkable.`
+          },
+          // Add more testimonials here
+        ];
+      }
+
+      function renderTestimonialsSlider() {
+        const testimonials = getTestimonials();
+        const sliderContainer = document.getElementById('testimonials-slider');
+        if (!testimonials.length) {
+          sliderContainer.innerHTML = '<p class="text-gray-400">No testimonials available.</p>';
+          return;
+        }
+        sliderContainer.innerHTML = `
+          <div class="swiper testimonials-swiper">
+            <div class="swiper-wrapper">
+              ${testimonials.map(t => `
+                <div class="swiper-slide">
+                  <div class="bg-secondary rounded-xl p-6 shadow-lg card-hover">
+                    <div class="flex items-center mb-4">
+                      <img src="${t.image}" alt="${t.name}" class="w-12 h-12 rounded-full mr-4" />
+                      <div>
+                        <h4 class="font-bold">${t.name}</h4>
+                        <p class="text-gray-400 text-sm">${t.tag}</p>
+                      </div>
+                    </div>
+                    <div class="text-gray-300 mb-4">
+                      <i class="fas fa-quote-left text-primary mr-2"></i>
+                      ${t.text}
+                    </div>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        `;
+        if (window.Swiper) {
+          new Swiper('.testimonials-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 24,
+            loop: true,
+            navigation: {
+              nextEl: '.testimonials-swiper .swiper-button-next',
+              prevEl: '.testimonials-swiper .swiper-button-prev',
+            },
+            pagination: {
+              el: '.testimonials-swiper .swiper-pagination',
+              clickable: true,
+            },
+            breakpoints: {
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            },
+          });
+        }
+      }
+
+      function renderCoursesSlider() {
+        const courses = getCourses();
+        const sliderContainer = document.getElementById('courses-slider');
+        if (!courses.length) {
+          sliderContainer.innerHTML = '<p class="text-gray-400">No courses available.</p>';
+          return;
+        }
+        sliderContainer.innerHTML = `
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              ${courses.map(course => `
+                <div class="swiper-slide">
+                  <div class="bg-dark rounded-xl overflow-hidden shadow-lg card-hover flex flex-col h-full">
+                    <div class="relative">
+                      <img src="${course.image}" alt="${course.name}" class="w-full h-48 object-cover" />
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                      <h3 class="text-xl font-bold mb-2">${course.name}</h3>
+                      <div class="flex items-center text-gray-400 text-sm mb-2">
+                        <i class="far fa-clock mr-2"></i>
+                        <span>${course.timing} | Started on ${new Date(course.startDate).toLocaleDateString()}</span>
+                      </div>
+                      <p class="text-gray-400 mb-4 flex-grow">${course.description}</p>
+                      <a href="${course.link}" target="_blank" class="bg-primary hover:bg-blue-700 px-4 py-2 rounded text-sm font-medium transition-all text-center mt-auto">Enroll Now</a>
+                    </div>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        `;
+        // Initialize Swiper
+        if (window.Swiper) {
+          new Swiper('.swiper', {
+            slidesPerView: 1,
+            spaceBetween: 24,
+            loop: true,
+            navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+              el: '.swiper-pagination',
+              clickable: true,
+            },
+            breakpoints: {
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            },
+          });
+        }
+      }
+
+      // Wait for SwiperJS to load, then render all sliders
+      function waitForSwiperAndRenderAll() {
+        if (window.Swiper) {
+          renderCoursesSlider();
+          renderBooksSlider();
+          renderTestimonialsSlider();
+        } else {
+          setTimeout(waitForSwiperAndRenderAll, 100);
+        }
+      }
+      waitForSwiperAndRenderAll();
+    });
+  </script>
+  <!-- SwiperJS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</body>
+</html>
