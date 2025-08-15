@@ -84,6 +84,31 @@
     .book-card:hover .book-inner {
       transform: rotateY(10deg);
     }
+    
+    /* Testimonials Slider Styles */
+    .testimonials-swiper .swiper-button-next,
+    .testimonials-swiper .swiper-button-prev {
+      color: #3b82f6;
+      background: rgba(59, 130, 246, 0.1);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      backdrop-filter: blur(10px);
+    }
+    
+    .testimonials-swiper .swiper-button-next:hover,
+    .testimonials-swiper .swiper-button-prev:hover {
+      background: rgba(59, 130, 246, 0.2);
+    }
+    
+    .testimonials-swiper .swiper-pagination-bullet {
+      background: #3b82f6;
+      opacity: 0.5;
+    }
+    
+    .testimonials-swiper .swiper-pagination-bullet-active {
+      opacity: 1;
+    }
   </style>
 </head>
 <body class="bg-dark text-gray-100">
@@ -113,7 +138,7 @@
         <a href="#books" class="nav-link text-gray-300 hover:text-white">Books</a>
         <a href="#forum" class="nav-link text-gray-300 hover:text-white">Forum</a>
         <a href="#success" class="nav-link text-gray-300 hover:text-white">Success</a>
-        <a href="pjbot.html" class="nav-link text-gray-300 hover:text-white">PJ Bot</a>
+        <!--<a href="pjbot.html" class="nav-link text-gray-300 hover:text-white">PJ Bot</a>-->
         <button class="bg-primary hover:bg-blue-700 px-4 py-2 rounded-md font-medium transition-all">
           Contact
         </button>
@@ -407,51 +432,8 @@
         </p>
       </div>
       
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Testimonial 1 -->
-        <div class="bg-secondary rounded-xl p-6 shadow-lg card-hover">
-          <div class="flex items-center mb-4">
-            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Student" class="w-12 h-12 rounded-full mr-4" />
-            <div>
-              <h4 class="font-bold">Rahul Sharma</h4>
-              <p class="text-gray-400 text-sm">AIR 12, JEE Advanced 2023</p>
-            </div>
-          </div>
-          <div class="text-gray-300 mb-4">
-            <i class="fas fa-quote-left text-primary mr-2"></i>
-            PJ Sir's teaching methodology is exceptional. His problem-solving techniques helped me secure AIR 12 in JEE Advanced. The way he breaks down complex problems into simple steps is remarkable.
-          </div>
-        </div>
-        
-        <!-- Testimonial 2 -->
-        <div class="bg-secondary rounded-xl p-6 shadow-lg card-hover">
-          <div class="flex items-center mb-4">
-            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Student" class="w-12 h-12 rounded-full mr-4" />
-            <div>
-              <h4 class="font-bold">Priya Patel</h4>
-              <p class="text-gray-400 text-sm">INMO Qualifier 2023</p>
-            </div>
-          </div>
-          <div class="text-gray-300 mb-4">
-            <i class="fas fa-quote-left text-primary mr-2"></i>
-            PJ Sir's Olympiad books were my bible during preparation. His explanations are crystal clear, and the problems are perfectly curated. Qualified for INMO in my first attempt thanks to his guidance.
-          </div>
-        </div>
-        
-        <!-- Testimonial 3 -->
-        <div class="bg-secondary rounded-xl p-6 shadow-lg card-hover">
-          <div class="flex items-center mb-4">
-            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Student" class="w-12 h-12 rounded-full mr-4" />
-            <div>
-              <h4 class="font-bold">Amit Kumar</h4>
-              <p class="text-gray-400 text-sm">AIR 89, JEE Advanced 2022</p>
-            </div>
-          </div>
-          <div class="text-gray-300 mb-4">
-            <i class="fas fa-quote-left text-primary mr-2"></i>
-            The Nimbus batch completely changed my approach to mathematics. PJ Sir's emphasis on conceptual clarity over rote learning helped me develop genuine problem-solving skills that were crucial for JEE.
-          </div>
-        </div>
+      <div id="testimonials-slider" class="max-w-6xl mx-auto">
+        <!-- Testimonials slider will be rendered here -->
       </div>
       
       <div class="mt-12 aspect-w-16 aspect-h-9 rounded-xl overflow-hidden shadow-2xl max-w-4xl mx-auto">
@@ -483,7 +465,7 @@
                 </div>
                 <div>
                   <h4 class="font-medium mb-1">Email</h4>
-                  <p class="text-gray-400">contact@pjsir.com</p>
+                  <p class="text-gray-400">prashant42jain@gmail.com</p>
                 </div>
               </div>
               
@@ -493,7 +475,7 @@
                 </div>
                 <div>
                   <h4 class="font-medium mb-1">Phone</h4>
-                  <p class="text-gray-400">+91 98765 43210</p>
+                  <p class="text-gray-400">+91 75970 84242</p>
                 </div>
               </div>
               
@@ -511,24 +493,24 @@
             <div class="mt-8">
               <h4 class="font-medium mb-4">Follow PJ Sir</h4>
               <div class="flex gap-4">
-                <a href="#" class="bg-dark hover:bg-gray-800 w-10 h-10 rounded-full flex items-center justify-center transition-all">
+                <a href="https://www.youtube.com/@Prashant42jain" class="bg-dark hover:bg-gray-800 w-10 h-10 rounded-full flex items-center justify-center transition-all">
                   <i class="fab fa-youtube"></i>
                 </a>
-                <a href="#" class="bg-dark hover:bg-gray-800 w-10 h-10 rounded-full flex items-center justify-center transition-all">
+                <a href="https://www.instagram.com/prashantjain0042" class="bg-dark hover:bg-gray-800 w-10 h-10 rounded-full flex items-center justify-center transition-all">
                   <i class="fab fa-instagram"></i>
                 </a>
-                <a href="#" class="bg-dark hover:bg-gray-800 w-10 h-10 rounded-full flex items-center justify-center transition-all">
+                <a href="https://www.linkedin.com/in/prashant42jain" class="bg-dark hover:bg-gray-800 w-10 h-10 rounded-full flex items-center justify-center transition-all">
                   <i class="fab fa-linkedin-in"></i>
                 </a>
-                <a href="#" class="bg-dark hover:bg-gray-800 w-10 h-10 rounded-full flex items-center justify-center transition-all">
-                  <i class="fab fa-twitter"></i>
+                <a href="https://t.me/pjsir42" class="bg-dark hover:bg-gray-800 w-10 h-10 rounded-full flex items-center justify-center transition-all">
+                  <i class="fab fa-telegram"></i>
                 </a>
               </div>
             </div>
           </div>
           
           <div>
-            <form action="https://formspree.io/f/xkgzndrn" method="POST" class="space-y-4">
+                         <form id="contactForm" class="space-y-4">
               <div>
                 <label for="name" class="block text-sm font-medium mb-1">Your Name</label>
                 <input type="text" id="name" name="name" required 
@@ -621,17 +603,17 @@
           © 2025 PJ Sir. All rights reserved.
         </p>
         <div class="flex gap-4 mt-4 md:mt-0">
-          <a href="#" class="text-gray-500 hover:text-primary transition-all">
+          <a href="https://www.youtube.com/@Prashant42jain" class="text-gray-500 hover:text-primary transition-all">
             <i class="fab fa-youtube"></i>
           </a>
-          <a href="#" class="text-gray-500 hover:text-primary transition-all">
+          <a href="https://www.instagram.com/prashantjain0042" class="text-gray-500 hover:text-primary transition-all">
             <i class="fab fa-instagram"></i>
           </a>
-          <a href="#" class="text-gray-500 hover:text-primary transition-all">
+          <a href="https://www.linkedin.com/in/prashant42jain" class="text-gray-500 hover:text-primary transition-all">
             <i class="fab fa-linkedin-in"></i>
           </a>
-          <a href="#" class="text-gray-500 hover:text-primary transition-all">
-            <i class="fab fa-twitter"></i>
+          <a href="https://t.me/pjsir42" class="text-gray-500 hover:text-primary transition-all">
+            <i class="fab fa-telegram"></i>
           </a>
         </div>
       </div>
@@ -706,106 +688,42 @@
         ];
       }
 
-      // --- Books Slider ---
-      function getBooks() {
-        // Example structure:
-        return [
-          {
-            title: 'IOQM Mathematics',
-            subtitle: 'Indian Olympiad Qualifiers',
-            image: 'https://m.media-amazon.com/images/I/61GtnGm4giL._SY522_.jpg',
-            rating: 4.5,
-            reviews: 98,
-            link: 'https://www.amazon.in/IOQM-Mathematics-Indian-Olympiad-Qualifiers/dp/9361597531/',
-            button: 'Buy Now',
-            buttonIcon: 'fab fa-amazon'
-          },
-          // Add more books here
-        ];
-      }
 
-      function renderBooksSlider() {
-        const books = getBooks();
-        const sliderContainer = document.getElementById('books-slider');
-        if (!books.length) {
-          sliderContainer.innerHTML = '<p class="text-gray-400">No books available.</p>';
-          return;
-        }
-        sliderContainer.innerHTML = `
-          <div class="swiper books-swiper">
-            <div class="swiper-wrapper">
-              ${books.map(book => `
-                <div class="swiper-slide">
-                  <div class="book-card">
-                    <div class="book-inner bg-secondary rounded-lg overflow-hidden shadow-lg h-full flex flex-col">
-                      <div class="p-4 flex-grow">
-                        <div class="aspect-[3/4] bg-gray-700 rounded-md mb-4 flex items-center justify-center">
-                          <img src="${book.image}" alt="${book.title}" class="w-full h-full object-contain" />
-                        </div>
-                        <h3 class="font-bold text-lg mb-1">${book.title}</h3>
-                        <p class="text-gray-400 text-sm mb-3">${book.subtitle || ''}</p>
-                        <div class="flex items-center text-yellow-400 mb-3">
-                          <!-- Optionally add stars here if you want -->
-                          <span class="text-gray-400 text-xs ml-1">(${book.reviews})</span>
-                        </div>
-                      </div>
-                      <div class="p-4 border-t border-gray-700">
-                        <a href="${book.link}" class="w-full bg-primary hover:bg-blue-700 text-white py-2 rounded text-sm font-medium flex items-center justify-center transition-all" target="_blank">
-                          <i class="${book.buttonIcon} mr-2"></i> ${book.button}
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              `).join('')}
-            </div>
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-          </div>
-        `;
-        if (window.Swiper) {
-          new Swiper('.books-swiper', {
-            slidesPerView: 1,
-            spaceBetween: 24,
-            loop: true,
-            navigation: {
-              nextEl: '.books-swiper .swiper-button-next',
-              prevEl: '.books-swiper .swiper-button-prev',
-            },
-            pagination: {
-              el: '.books-swiper .swiper-pagination',
-              clickable: true,
-            },
-            breakpoints: {
-              768: { slidesPerView: 2 },
-              1024: { slidesPerView: 3 },
-            },
-          });
-        }
-      }
 
       // --- Testimonials Slider ---
       function getTestimonials() {
-        // Example structure:
         return [
           {
-            name: 'Rahul Sharma',
-            image: 'https://randomuser.me/api/portraits/men/32.jpg',
-            tag: 'AIR 12, JEE Advanced 2023',
-            text: `PJ Sir's teaching methodology is exceptional. His problem-solving techniques helped me secure AIR 12 in JEE Advanced. The way he breaks down complex problems into simple steps is remarkable.`
+            name: 'Arinjay Singhal',
+            image: 'assets/testimonials/t1.jpg',
+            tag: 'AIR 95, JEE Advanced 2023',
+            text: `I connected with PJ Sir in class 11 for math olympiad preparation, later continuing JEE. His unique methods and mentorship instilled discipline and focus, guiding me through challenges. I'm deeply grateful and highly recommend him.`
           },
-          // Add more testimonials here
+          {
+            name: 'Tushar Jain',
+            image: 'assets/testimonials/t2.jpg',
+            tag: 'AIR 130, JEE Advanced 2023',
+            text: `PJ Sir was not only my mentor during my JEE preparation but also one of my greatest inspirations. His mentorship went far beyond academics—he guided me through the finer, non-academic aspects that are equally crucial for succeeding in JEE.`
+          },
+          {
+            name: 'Aarav Bhatt',
+            image: 'assets/testimonials/t3.jpg',
+            tag: 'AIR 3, JEE Main 2024',
+            text: `PJ Sir and his book helped me a lot while preparing for RMO, which I was successful in clearing in my first attempt. His teachings helped me build problem solving skills further for competitive examinations such as JEE Mains and Advanced.`
+          },
         ];
       }
 
       function renderTestimonialsSlider() {
         const testimonials = getTestimonials();
         const sliderContainer = document.getElementById('testimonials-slider');
+        
         if (!testimonials.length) {
           sliderContainer.innerHTML = '<p class="text-gray-400">No testimonials available.</p>';
           return;
         }
+        
+        try {
         sliderContainer.innerHTML = `
           <div class="swiper testimonials-swiper">
             <div class="swiper-wrapper">
@@ -832,11 +750,16 @@
             <div class="swiper-button-next"></div>
           </div>
         `;
+        console.log("success")
         if (window.Swiper) {
           new Swiper('.testimonials-swiper', {
             slidesPerView: 1,
             spaceBetween: 24,
             loop: true,
+            autoplay: {
+              delay: 5000,
+              disableOnInteraction: false,
+            },
             navigation: {
               nextEl: '.testimonials-swiper .swiper-button-next',
               prevEl: '.testimonials-swiper .swiper-button-prev',
@@ -850,6 +773,54 @@
               1024: { slidesPerView: 3 },
             },
           });
+        }
+        } catch (error) {
+          console.error('Error rendering testimonials slider:', error);
+          sliderContainer.innerHTML = `
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div class="bg-secondary rounded-xl p-6 shadow-lg card-hover">
+                <div class="flex items-center mb-4">
+                  <img src="assets/testimonials/t1.jpg" alt="Student" class="w-12 h-12 rounded-full mr-4" />
+                  <div>
+                    <h4 class="font-bold">Arinjay Singhal</h4>
+                    <p class="text-gray-400 text-sm">AIR 95, JEE Advanced 2023</p>
+                  </div>
+                </div>
+                <div class="text-gray-300 mb-4">
+                  <i class="fas fa-quote-left text-primary mr-2"></i>
+                  I connected with PJ Sir in class 11 for math olympiad preparation, later continuing JEE. His unique methods and mentorship instilled discipline and focus, guiding me through challenges. I'm deeply grateful and highly recommend him.
+                </div>
+              </div>
+              
+              <div class="bg-secondary rounded-xl p-6 shadow-lg card-hover">
+                <div class="flex items-center mb-4">
+                  <img src="assets/testimonials/t2.jpg" alt="Student" class="w-12 h-12 rounded-full mr-4" />
+                  <div>
+                    <h4 class="font-bold">Tushar Jain</h4>
+                    <p class="text-gray-400 text-sm">AIR 130, JEE Advanced 2023</p>
+                  </div>
+                </div>
+                <div class="text-gray-300 mb-4">
+                  <i class="fas fa-quote-left text-primary mr-2"></i>
+                  PJ Sir was not only my mentor during my JEE preparation but also one of my greatest inspirations. His mentorship went far beyond academics—he guided me through the finer, non-academic aspects that are equally crucial for succeeding in JEE.
+                </div>
+              </div>
+              
+              <div class="bg-secondary rounded-xl p-6 shadow-lg card-hover">
+                <div class="flex items-center mb-4">
+                  <img src="assets/testimonials/t3.jpg" alt="Student" class="w-12 h-12 rounded-full mr-4" />
+                  <div>
+                    <h4 class="font-bold">Aarav Bhatt</h4>
+                    <p class="text-gray-400 text-sm">AIR 3, JEE Main 2024</p>
+                  </div>
+                </div>
+                <div class="text-gray-300 mb-4">
+                  <i class="fas fa-quote-left text-primary mr-2"></i>
+                  PJ Sir and his book helped me a lot while preparing for RMO, which I was successful in clearing in my first attempt. His teachings helped me build problem solving skills further for competitive examinations such as JEE Mains and Advanced.
+                </div>
+              </div>
+            </div>
+          `;
         }
       }
 
@@ -913,16 +884,65 @@
       function waitForSwiperAndRenderAll() {
         if (window.Swiper) {
           renderCoursesSlider();
-          renderBooksSlider();
           renderTestimonialsSlider();
         } else {
           setTimeout(waitForSwiperAndRenderAll, 100);
         }
       }
-      waitForSwiperAndRenderAll();
-    });
-  </script>
-  <!-- SwiperJS JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+             waitForSwiperAndRenderAll();
+       
+               // Contact form handling
+        const contactForm = document.getElementById('contactForm');
+        
+        // Initialize EmailJS (you'll need to replace these with your actual EmailJS credentials)
+        emailjs.init("F83d2CV-Q85Yj7Elx"); // Replace with your EmailJS public key
+        
+        contactForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          // Show loading state
+          const submitBtn = contactForm.querySelector('button[type="submit"]');
+          const originalText = submitBtn.innerHTML;
+          submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Sending...';
+          submitBtn.disabled = true;
+          
+          const formData = new FormData(contactForm);
+          const name = formData.get('name') || contactForm.querySelector('#name').value;
+          const email = formData.get('email') || contactForm.querySelector('#email').value;
+          const phone = formData.get('phone') || contactForm.querySelector('#phone').value;
+          const message = formData.get('message') || contactForm.querySelector('#message').value;
+          
+          // EmailJS template parameters
+          const templateParams = {
+            to_email: 'prashant42jain@gmail.com',
+            from_name: name,
+            from_email: email,
+            phone: phone,
+            message: message,
+            subject: `Contact from ${name} - PJ Sir Website`
+          };
+          
+          // Send email using EmailJS
+          emailjs.send('service_jvzwlwe', 'template_6w42bkk', templateParams)
+            .then(function(response) {
+              // Success
+              alert('Thank you for your message! We will get back to you soon.');
+              contactForm.reset();
+            }, function(error) {
+              // Error
+              alert('Sorry, there was an error sending your message. Please try again or contact us directly at prashant42jain@gmail.com');
+            })
+            .finally(function() {
+              // Reset button state
+              submitBtn.innerHTML = originalText;
+              submitBtn.disabled = false;
+            });
+        });
+     });
+   </script>
+     <!-- EmailJS -->
+   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+   <!-- SwiperJS JS -->
+   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
 </html>
